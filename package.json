@@ -7,11 +7,15 @@
     "dev": "slidev --open",
     "build": "slidev build",
     "export": "slidev export",
-    "export:pdf": "slidev export --format pdf"
+    "export:pdf": "slidev export --format pdf",
+    "check": "node check-overflow.mjs"
   },
   "dependencies": {
     "@slidev/cli": "^52.15.2",
     "@slidev/theme-seriph": "^0.25.0",
     "vue": "^3.5.35"
+  },
+  "devDependencies": {
+    "playwright": "^1.60.0"
   }
 }

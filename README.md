@@ -34,6 +34,19 @@ bun run export       # 匯出 PDF / PNG（需要 playwright-chromium）
 
 > 匯出 PDF 第一次會提示安裝 `playwright-chromium`，依指示安裝即可。
 
+## 檢查版面破版
+
+`bun run check` 會用 Playwright 載入 Slidev 的 `/export/` 路由（會展開所有 `v-click`，
+等於現場按過去後的最壞情況），逐頁量測內容是否超出投影片的 552px 畫布高度，找出會被裁切的頁面。
+
+```bash
+bun run check   # 自動起 dev server → 逐頁量測 → 關閉；有破版時印出 ⚠️ OVERFLOW
+```
+
+- 自行管理 dev server，跑完即關，不需另開終端機。
+- 若已有 dev server 在跑，可用 `BASE=http://localhost:3030 bun run check` 重用它。
+- 有任何頁面破版時 exit code 為 `1`，方便接進 CI。
+
 ## 內容大綱
 
 1. 開場提問：AI 寫的功能你怎麼知道「對」？

@@ -192,7 +192,7 @@ layout: center
 
 # 四階段工作流程
 
-```mermaid {scale: 0.72}
+```mermaid {scale: 0.58}
 flowchart LR
     R([使用者需求]) --> P1
     subgraph P1 [Phase 1 · 規格]
@@ -561,7 +561,7 @@ layout: default
 
 # SpecBridge 怎麼運作
 
-```mermaid {scale: 0.62}
+```mermaid {scale: 0.44}
 flowchart LR
     A[".feature 合約"] --> S
     B["-u base URL"] --> S
@@ -572,13 +572,12 @@ flowchart LR
     R -->|不符| NG["❌ exit 1"]
 ```
 
-<div class="grid grid-cols-2 gap-4 mt-3 text-sm">
+<div class="grid grid-cols-2 gap-4 mt-2 text-xs">
 
 <div v-click>
 
 ```bash
-specbridge verify \
-  -f login.feature \
+specbridge verify -f login.feature \
   -u http://localhost:3000 \
   -H "Authorization: Bearer <token>"
 ```
@@ -594,8 +593,7 @@ specbridge verify \
 | `When I send a "METHOD" request to "/path"` | 發送請求 |
 | `And the request body is:` + JSON | 帶請求 body |
 | `Then the response status should be 200` | 斷言狀態碼 |
-| `Then the response body should be:` + JSON | 完整比對 |
-| `… contain field "k" with value "v"` | 比對單一欄位 |
+| `… body should be:` / `contain field "k"` | 比對回應 |
 
 </div>
 
@@ -777,7 +775,7 @@ layout: default
 
 # 安裝與使用
 
-<div class="grid grid-cols-2 gap-6">
+<div class="grid grid-cols-2 gap-6 text-sm">
 
 <div v-click>
 
@@ -785,36 +783,24 @@ layout: default
 
 ```bash
 uvx --from gsi-protocol-installer gsi-install
-# 或
-pipx run gsi-protocol-installer
 ```
 
-安裝器會引導你：
-1. 選 AI 平台
-2. 選全域 / 專案安裝
-3. 裝好斜線指令
+安裝器引導你選 **AI 平台 → 全域/專案 → 裝好指令**。
+
+<div class="mt-3">
+
+**多平台支援**（同一份模板自動轉換格式）
+
+| 平台 | 用法 |
+|------|------|
+| Claude Code / Codex | `/sdd-auto <需求>` |
+| GitHub Copilot | `@workspace /sdd-auto` |
+
+</div>
 
 </div>
 
 <div v-click>
-
-### 多平台支援
-
-| 平台 | 用法 |
-|------|------|
-| Claude Code | `/sdd-auto <需求>` |
-| Codex (OpenAI) | `/sdd-auto <需求>` |
-| GitHub Copilot | `@workspace /sdd-auto` |
-
-<div class="text-sm opacity-70 mt-2">
-同一份模板，安裝器自動轉換成各平台格式。
-</div>
-
-</div>
-
-</div>
-
-<div v-click class="mt-6">
 
 ### 可用指令
 
@@ -825,6 +811,8 @@ pipx run gsi-protocol-installer
 | `/sdd-arch` | 從規格設計架構 | 2 |
 | `/sdd-impl` | TDD 實作程式碼 | 3 |
 | `/sdd-verify` | 合約 / E2E + 單元測試驗收 | 4 |
+
+</div>
 
 </div>
 
@@ -840,7 +828,7 @@ layout: default
 
 # 實際跑一次（自動模式）
 
-<div class="text-lg mb-4">
+<div class="text-center my-2">
 
 ```bash
 /sdd-auto 為產品列表 API 加上分頁功能
@@ -848,19 +836,19 @@ layout: default
 
 </div>
 
-```mermaid {scale: 0.62}
-flowchart TB
-    U["/sdd-auto 需求"] --> S1
-    S1["① 掃描專案<br/>判斷前/後端、技術棧"] --> S2
-    S2["② Phase 1 規格<br/>PRD.md + .feature"] --> S3
-    S3["③ Phase 2 架構<br/>architecture.md"] --> S4
-    S4["④ Phase 3 實作<br/>TDD + 逐 cycle commit"] --> S5
-    S5["⑤ Phase 4 驗收<br/>SpecBridge / Playwright"] --> D{全綠?}
+```mermaid {scale: 0.5}
+flowchart LR
+    U["/sdd-auto<br/>需求"] --> S1["① 掃描專案<br/>判斷前/後端"]
+    S1 --> S2["② 規格<br/>PRD + .feature"]
+    S2 --> S3["③ 架構<br/>architecture.md"]
+    S3 --> S4["④ 實作<br/>TDD + commit"]
+    S4 --> S5["⑤ 驗收<br/>SpecBridge / Playwright"]
+    S5 --> D{全綠?}
     D -- 是 --> OK["✅ conclusion.md"]
     D -- 否 --> S4
 ```
 
-<div v-click class="mt-3 text-center opacity-80">
+<div v-click class="mt-2 text-center text-sm opacity-80">
 全程<b>專案感知</b>：自動偵測 <code>package.json</code> / <code>go.mod</code> / <code>requirements.txt</code>，沿用你的結構與慣例。
 </div>
 

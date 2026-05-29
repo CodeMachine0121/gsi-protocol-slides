@@ -1,0 +1,7 @@
+/* Center all mermaid diagrams.
+   The SVG is rendered inside a shadow root on a host <div class="mermaid">.
+   text-align is inherited and crosses the shadow boundary, and mermaid SVGs
+   are inline-level, so this centers them without needing to pierce the shadow DOM. */
+.slidev-layout .mermaid {
+  text-align: center;
+}
