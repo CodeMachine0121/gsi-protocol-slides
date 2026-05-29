@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "slidev --open",
     "build": "slidev build",
+    "build:blog": "slidev build --base /slides/gsi-protocol/ --out ../CodeMachine0121.github.io/public/slides/gsi-protocol",
     "export": "slidev export",
     "export:pdf": "slidev export --format pdf",
     "check": "node check-overflow.mjs"

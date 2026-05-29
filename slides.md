@@ -12,6 +12,9 @@ drawings:
   persist: false
 transition: slide-left
 mdc: true
+# hash 路由：讓 build 後的簡報能放在靜態主機（GitHub Pages）子目錄，
+# 深連結／重整任一頁都不會 404
+routerMode: hash
 fonts:
   sans: 'Noto Sans TC'
   serif: 'Noto Serif TC'
