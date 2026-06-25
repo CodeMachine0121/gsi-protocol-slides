@@ -134,7 +134,7 @@ class: text-center
 </div>
 
 <div v-click class="mt-10 text-xl opacity-80">
-一條從<b>需求</b>到<b>可投產程式碼</b>、全程可追溯的軌道
+從<b>需求</b>到<b>上線的程式碼</b>，每一步都有跡可循
 </div>
 
 <!--
@@ -489,14 +489,14 @@ layout: default
 </div>
 
 <div v-click class="mt-4 p-3 rounded-lg bg-purple-500/10 border border-purple-500/30 text-center">
-🔖 <b>每完成一個 TDD 循環就 commit 一次</b>，訊息以 <code>feat:</code> 開頭 —— 提交粒度對齊業務情境。
+🔖 <b>每完成一個 TDD 循環就 commit 一次</b>，訊息遵循 Conventional Commits —— 讓提交粒度對齊業務情境。
 </div>
 
 <!--
 TDD 三步驟大家熟。重點在 GSI 的兩個特色：
 1. 程式碼嚴格對齊架構（簽章一致）。
 2. 依 @api/@ui 走不同測試策略。
-3. 每個 cycle 一個 commit，feat: 開頭 —— 這讓 git 歷史本身就是業務情境的紀錄。
+3. 每個 cycle 一個 commit，遵循 Conventional Commits —— 這讓 git 歷史本身就是業務情境的紀錄。
 -->
 
 ---
