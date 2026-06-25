@@ -974,8 +974,6 @@ class: text-center
 
 📦 安裝：`uvx --from gsi-protocol-installer gsi-install`
 
-🌐 Landing：`coding-afternoon.com/gsi-protocol`
-
 </div>
 
 <div class="mt-10 text-2xl">
@@ -987,5 +985,5 @@ James Hsueh · asdfg55887@gmail.com
 </div>
 
 <!--
-收尾：給連結、安裝指令、landing page。留時間 Q&A。
+收尾：給連結、安裝指令。留時間 Q&A。
 -->
