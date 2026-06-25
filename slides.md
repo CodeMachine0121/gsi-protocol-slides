@@ -266,7 +266,7 @@ layout: default
 
 **開工前會先做三件事**
 
-1. 🔍 掃描專案結構與技術棧
+1. 🔍 掃描專案結構與技術
 2. 📚 讀過所有既有的 `.gsi` 規格，避免衝突
 3. 🧭 判斷專案類型（前端 / 後端 / 全端）
 
@@ -914,7 +914,7 @@ class: text-center
 
 <div v-click class="p-4 rounded-lg bg-green-500/10 border border-green-500/30">
 <b>🌐 語言無關</b><br/>
-<span class="opacity-80">同一份規格與架構，任何技術棧都能落地。</span>
+<span class="opacity-80">同一份規格與架構，任何技術都能落地。</span>
 </div>
 
 <div v-click class="p-4 rounded-lg bg-green-500/10 border border-green-500/30">
