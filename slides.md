@@ -1,7 +1,7 @@
 ---
 theme: seriph
 background: https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070
-title: GSI-Protocol — 讓 AI 寫出「對」的程式碼
+title: GSI 協議：提升 AI 驅動 SDD 的效率與敏捷性
 info: |
   ## GSI-Protocol
   規格驅動開發（SDD）工作流程 — 讓 AI 輔助開發從「能跑」變成「可驗收」。
