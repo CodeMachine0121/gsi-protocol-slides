@@ -21,9 +21,7 @@ fonts:
   mono: 'Fira Code'
 ---
 
-# GSI-Protocol
-
-讓 AI 寫出「**對**」的程式碼
+# GSI 協議：提升 AI 驅動 SDD 的效率與敏捷性
 
 <div class="text-xl opacity-80 mt-4">
 規格驅動開發（SDD）工作流程 — Gherkin · Structure · Implement
